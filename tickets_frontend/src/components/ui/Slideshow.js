@@ -5,7 +5,7 @@ import balls from "../../assets/pictures/balls.jpg";
 
 export const Slideshow = () => {
   return (
-    <div className="d-flex justify-content-center my-3">
+    <div className="d-flex justify-content-center my-3 d-none d-lg-flex">
       <Carousel
         controls={false}
         indicators={false}

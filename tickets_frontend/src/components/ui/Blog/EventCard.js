@@ -16,7 +16,7 @@ export const EventCard = (props) => {
         <Card.Body>
           <Card.Title>{`${props.home_team} gg ${props.away_team}`}</Card.Title>
           <Card.Subtitle className="mb-3">
-            {props.date} {"\u00B7"} {props.stadium}
+            {props.date.split("T")[0]} {"\u00B7"} {props.stadium}
           </Card.Subtitle>
           <Card.Text>Ein aufregendes Spiel</Card.Text>
           <Button variant="primary" onClick={() => {navigate(`/events/${props.id}`)}}>
