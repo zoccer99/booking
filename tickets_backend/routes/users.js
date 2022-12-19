@@ -57,24 +57,24 @@ userRoutes.get("/isUserAuthenticated", authentification, (req, res) => {
   res.sendStatus(200);
 });
 
-userRoutes.post("/register", async (req, res) => {
-  const userData = req.body;
-  userData.password = await bcrypt.hash(userData.password, 10);
-  let userExisting = await isUserExisting(userData.username, userData.email);
-  let passwordExisting = await isPasswordExisting(userData.password);
-  if (userExisting) {
-    res.status(409).json("User existiert bereits"); //coflict
-    return;
-  }
-  if (passwordExisting) {
-    res.status(409).json("Password schon vergeben");
-    return;
-  }
-  collections.users.insertOne(userData, (err, res) => {
-    if (err) throw err;
-  });
-  const token = generateAccessToken(userData.username);
-  res.status(200).send({ accessToken: token });
-});
+// userRoutes.post("/register", async (req, res) => {
+//   const userData = req.body;
+//   userData.password = await bcrypt.hash(userData.password, 10);
+//   let userExisting = await isUserExisting(userData.username, userData.email);
+//   let passwordExisting = await isPasswordExisting(userData.password);
+//   if (userExisting) {
+//     res.status(409).json("User existiert bereits"); //coflict
+//     return;
+//   }
+//   if (passwordExisting) {
+//     res.status(409).json("Password schon vergeben");
+//     return;
+//   }
+//   collections.users.insertOne(userData, (err, res) => {
+//     if (err) throw err;
+//   });
+//   const token = generateAccessToken(userData.username);
+//   res.status(200).send({ accessToken: token });
+// });
 
 export default userRoutes;

@@ -9,6 +9,7 @@ import { About } from "./components/ui/Pages/About";
 import { Contact } from "./components/ui/Pages/Contact";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ExtendedEvent } from "./components/ui/Blog/ExtendedEvent";
+import { Cart } from "./components/ui/user/Cart";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +22,7 @@ root.render(
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/events/:id" element={<ExtendedEvent />} />
+        <Route path="/myTickets" element={<Cart />} />
       </Routes>
     </Router>
   </React.StrictMode>
