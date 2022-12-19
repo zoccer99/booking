@@ -8,7 +8,7 @@ Um jeweils Front- und Backend zu starten müssen die zugehörigen  Node Module m
 installiert werden.
 
 ### Frontend
-Anschließend kann das Frontend, nach zwitschen in den frontend Ordner mit dem Befehl 
+Anschließend kann das Frontend, nach wechseln in den Frontend Ordner mit dem Befehl 
 
     npm start
 
